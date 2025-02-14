@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "*",
+      "destination": "chat-demo-backend-inky.vercel.app"
+    }
+  ]
+}
