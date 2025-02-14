@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: '*',
     methods: ['GET', 'POST'],
     credentials: true
   }
@@ -20,7 +20,7 @@ interface ChatMessage {
 }
 
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: '*', // 或者指定前端的 URL，例如 'https://your-frontend-url.vercel.app'
   methods: ['GET', 'POST'],
   credentials: true
 }));
