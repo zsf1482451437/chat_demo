@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "*",
-      "destination": "chat-demo-backend-inky.vercel.app"
+      "source": "/:path*",
+      "destination": "https://chat-demo-backend-inky.vercel.app/:path*"
     }
   ]
 }
