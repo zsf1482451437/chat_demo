@@ -1,12 +1,15 @@
 import React, { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import { io, Socket } from "socket.io-client";
 
-const socket: Socket = io("http://localhost:5000", {
-  withCredentials: true,
-  extraHeaders: {
-    "my-custom-header": "abcd",
-  },
-});
+const socket: Socket = io(
+  process.env.REACT_APP_SOCKET_URL || "http://localhost:5000",
+  {
+    withCredentials: true,
+    extraHeaders: {
+      "my-custom-header": "abcd",
+    },
+  }
+);
 
 interface Message {
   text: string;
